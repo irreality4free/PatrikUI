@@ -50,6 +50,11 @@ class MyWin(QtWidgets.QMainWindow):
         self.ui.rollL_plus.clicked.connect(self.RollLM)
         self.ui.rollR_plus.clicked.connect(self.RollRP)
         self.ui.rollR_min.clicked.connect(self.RollRM)
+        self.ui.head_min.clicked.connect(self.HeadM)
+        self.ui.head_plus.clicked.connect(self.HeadP)
+
+        self.ui.neck_plus.clicked.connect(self.NeckP)
+        self.ui.neck_min.clicked.connect(self.NeckM)
 
         self.ui.DrinkButton.clicked.connect(self.Drink)
         self.ui.PourButton.clicked.connect(self.Pour)
@@ -57,6 +62,7 @@ class MyWin(QtWidgets.QMainWindow):
         self.ui.WagButton.clicked.connect(self.Wag)
         self.ui.StartButton.clicked.connect(self.Start)
         self.ui.NiceButton.clicked.connect(self.Nice)
+        self.ui.CalibrationButton.clicked.connect(self.Calibration)
 
 
     def Refresh(self):
