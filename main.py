@@ -14,6 +14,7 @@ class MyWin(QtWidgets.QMainWindow):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.connected = False
 
         # Здесь прописываем событие нажатия на кнопку
         self.ui.refreshButton.clicked.connect(self.Refresh)
@@ -75,10 +76,12 @@ class MyWin(QtWidgets.QMainWindow):
             self.ui.portsWidget.addItem(key)
 
     def Connect(self):
-        port = self.ui.portsWidget.selectedItems()[0].text()
-        rate = self.ui.rateWidget.selectedItems()[0].text()
         try:
+            port = self.ui.portsWidget.selectedItems()[0].text()
+            rate = str(self.ui.comboBox.currentText())
+
             self.ser = serial.Serial(port, rate)
+            self.connected = True
             print('connected')
         except Exception as e:
             print (e)
@@ -89,47 +92,83 @@ class MyWin(QtWidgets.QMainWindow):
 
 
     def SAVE(self):
-        self.ser.write('m'.encode('utf-8'))
-        print("SAVE")
+        try:
+            self.ser.write('m'.encode('utf-8'))
+            print("SAVE")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def NEXT(self):
-        self.ser.write(','.encode('utf-8'))
-        print("NEXT")
+        try:
+            self.ser.write(','.encode('utf-8'))
+            print("NEXT")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def DetachHands(self):
-        self.ser.write('3'.encode('utf-8'))
-        print("DETACH Hands")
+        try:
+            self.ser.write('3'.encode('utf-8'))
+            print("DETACH Hands")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def DetachALL(self):
-        self.ser.write('1'.encode('utf-8'))
-        print("DETACH All")
+        try:
+            self.ser.write('1'.encode('utf-8'))
+            print("DETACH All")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def AttachALL(self):
-        self.ser.write('2'.encode('utf-8'))
-        print("ATTACH all")
+        try:
+            self.ser.write('2'.encode('utf-8'))
+            print("ATTACH all")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
 
 
     def HandRP(self):
-        self.ser.write('b'.encode('utf-8'))
-        print("HandRP")
+        try:
+            self.ser.write('b'.encode('utf-8'))
+            print("HandRP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def HandRM(self):
-        self.ser.write('n'.encode('utf-8'))
-        print("HandRM")
+        try:
+            self.ser.write('n'.encode('utf-8'))
+            print("HandRM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
 
     def HandLP(self):
-        self.ser.write('q'.encode('utf-8'))
-        print("HandLP")
+        try:
+            self.ser.write('q'.encode('utf-8'))
+            print("HandLP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def HandLM(self):
-        self.ser.write('w'.encode('utf-8'))
-        print("HandLM")
+        try:
+            self.ser.write('w'.encode('utf-8'))
+            print("HandLM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
@@ -137,22 +176,38 @@ class MyWin(QtWidgets.QMainWindow):
 
 
     def ArmRP(self):
-        self.ser.write('c'.encode('utf-8'))
-        print("ArmRP")
+        try:
+            self.ser.write('c'.encode('utf-8'))
+            print("ArmRP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def ArmRM(self):
-        self.ser.write('v'.encode('utf-8'))
-        print("ArmRM")
+        try:
+            self.ser.write('v'.encode('utf-8'))
+            print("ArmRM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
     def ArmLP(self):
-        self.ser.write('e'.encode('utf-8'))
-        print("ArmLP")
+        try:
+            self.ser.write('e'.encode('utf-8'))
+            print("ArmLP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def ArmLM(self):
-        self.ser.write('r'.encode('utf-8'))
-        print("ArmLM")
+        try:
+            self.ser.write('r'.encode('utf-8'))
+            print("ArmLM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
@@ -160,22 +215,39 @@ class MyWin(QtWidgets.QMainWindow):
 
 
     def Shold1RP(self):
-        self.ser.write('z'.encode('utf-8'))
-        print("Shold1RP")
+        try:
+            self.ser.write('z'.encode('utf-8'))
+            print("Shold1RP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def Shold1RM(self):
-        self.ser.write('x'.encode('utf-8'))
-        print("Shold1RM")
+        try:
+            self.ser.write('x'.encode('utf-8'))
+            print("Shold1RM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
     def Shold1LP(self):
-        self.ser.write('t'.encode('utf-8'))
-        print("Shold1LP")
+        try:
+            self.ser.write('t'.encode('utf-8'))
+            print("Shold1LP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def Shold1LM(self):
-        self.ser.write('y'.encode('utf-8'))
-        print("Shold1LM")
+        try:
+            self.ser.write('y'.encode('utf-8'))
+            print("Shold1LM")
+        except Exception as e:
+            print(e)
+            print('connection exeption')
+
 
 
 
@@ -183,23 +255,39 @@ class MyWin(QtWidgets.QMainWindow):
         # COXA COMMANDS
 
     def Shold2RP(self):
-        self.ser.write('j'.encode('utf-8'))
-        print("Shold2RP")
+        try:
+            self.ser.write('j'.encode('utf-8'))
+            print("Shold2RP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def Shold2RM(self):
-        self.ser.write('k'.encode('utf-8'))
-        print("Shold2RM")
+        try:
+            self.ser.write('k'.encode('utf-8'))
+            print("Shold2RM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
 
     def Shold2LP(self):
-        self.ser.write('u'.encode('utf-8'))
-        print("Shold2LP")
+        try:
+            self.ser.write('u'.encode('utf-8'))
+            print("Shold2LP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def Shold2LM(self):
-        self.ser.write('i'.encode('utf-8'))
-        print("Shold2LM")
+        try:
+            self.ser.write('i'.encode('utf-8'))
+            print("Shold2LM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
@@ -207,22 +295,38 @@ class MyWin(QtWidgets.QMainWindow):
 
 
     def RollRP(self):
-        self.ser.write('g'.encode('utf-8'))
-        print("RollRP")
+        try:
+            self.ser.write('g'.encode('utf-8'))
+            print("RollRP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def RollRM(self):
-        self.ser.write('h'.encode('utf-8'))
-        print("RollRM")
+        try:
+            self.ser.write('h'.encode('utf-8'))
+            print("RollRM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
     def RollLP(self):
-        self.ser.write('o'.encode('utf-8'))
-        print("RollLP")
+        try:
+            self.ser.write('o'.encode('utf-8'))
+            print("RollLP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def RollLM(self):
-        self.ser.write('p'.encode('utf-8'))
-        print("RollLM")
+        try:
+            self.ser.write('p'.encode('utf-8'))
+            print("RollLM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
@@ -230,44 +334,76 @@ class MyWin(QtWidgets.QMainWindow):
 
 
     def NeckP(self):
-        self.ser.write('a'.encode('utf-8'))
-        print("NeckP")
+        try:
+            self.ser.write('a'.encode('utf-8'))
+            print("NeckP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def NeckM(self):
-        self.ser.write('s'.encode('utf-8'))
-        print("NeckM")
+        try:
+            self.ser.write('s'.encode('utf-8'))
+            print("NeckM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
     def HeadP(self):
-        self.ser.write('d'.encode('utf-8'))
-        print("HeadP")
+        try:
+            self.ser.write('d'.encode('utf-8'))
+            print("HeadP")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def HeadM(self):
-        self.ser.write('f'.encode('utf-8'))
-        print("HeadM")
+        try:
+            self.ser.write('f'.encode('utf-8'))
+            print("HeadM")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
     ##############POSES####################
 
     def Drink(self):
-        self.ser.write('1'.encode('utf-8'))
-        print("Drink")
+        try:
+            self.ser.write('1'.encode('utf-8'))
+            print("Drink")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def SelfPour(self):
-        self.ser.write('2'.encode('utf-8'))
-        print("SelfPour")
+        try:
+            self.ser.write('2'.encode('utf-8'))
+            print("SelfPour")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
 
     def Wag(self):
-        self.ser.write('3'.encode('utf-8'))
-        print("Wag")
+        try:
+            self.ser.write('3'.encode('utf-8'))
+            print("Wag")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def Pour(self):
-        self.ser.write('4'.encode('utf-8'))
-        print("Pour")
+        try:
+            self.ser.write('4'.encode('utf-8'))
+            print("Pour")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
@@ -275,18 +411,30 @@ class MyWin(QtWidgets.QMainWindow):
 
 
     def Nice(self):
-        self.ser.write('5'.encode('utf-8'))
-        print("Nice")
+        try:
+            self.ser.write('5'.encode('utf-8'))
+            print("Nice")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
     def Start(self):
-        self.ser.write('6'.encode('utf-8'))
-        print("Start")
+        try:
+            self.ser.write('6'.encode('utf-8'))
+            print("Start")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
     def Calibration(self):
-        self.ser.write('calibration\n'.encode('utf-8'))
-        print("Calibration")
+        try:
+            self.ser.write('calibration\n'.encode('utf-8'))
+            print("Calibration")
+        except Exception as e:
+            print (e)
+            print ('connection exeption')
 
 
 
