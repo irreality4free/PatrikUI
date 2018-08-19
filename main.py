@@ -137,7 +137,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def HandRP(self):
         try:
-            self.ser.write('b'.encode('utf-8'))
+            self.ser.write('n'.encode('utf-8'))
             print("HandRP")
         except Exception as e:
             print (e)
@@ -145,7 +145,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def HandRM(self):
         try:
-            self.ser.write('n'.encode('utf-8'))
+            self.ser.write('b'.encode('utf-8'))
             print("HandRM")
         except Exception as e:
             print (e)
@@ -195,7 +195,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def ArmLP(self):
         try:
-            self.ser.write('e'.encode('utf-8'))
+            self.ser.write('r'.encode('utf-8'))
             print("ArmLP")
         except Exception as e:
             print (e)
@@ -203,7 +203,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def ArmLM(self):
         try:
-            self.ser.write('r'.encode('utf-8'))
+            self.ser.write('e'.encode('utf-8'))
             print("ArmLM")
         except Exception as e:
             print (e)
@@ -234,7 +234,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def Shold1LP(self):
         try:
-            self.ser.write('t'.encode('utf-8'))
+            self.ser.write('y'.encode('utf-8'))
             print("Shold1LP")
         except Exception as e:
             print (e)
@@ -242,7 +242,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def Shold1LM(self):
         try:
-            self.ser.write('y'.encode('utf-8'))
+            self.ser.write('t'.encode('utf-8'))
             print("Shold1LM")
         except Exception as e:
             print(e)
@@ -275,7 +275,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def Shold2LP(self):
         try:
-            self.ser.write('u'.encode('utf-8'))
+            self.ser.write('i'.encode('utf-8'))
             print("Shold2LP")
         except Exception as e:
             print (e)
@@ -283,7 +283,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def Shold2LM(self):
         try:
-            self.ser.write('i'.encode('utf-8'))
+            self.ser.write('u'.encode('utf-8'))
             print("Shold2LM")
         except Exception as e:
             print (e)
@@ -296,7 +296,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def RollRP(self):
         try:
-            self.ser.write('g'.encode('utf-8'))
+            self.ser.write('h'.encode('utf-8'))
             print("RollRP")
         except Exception as e:
             print (e)
@@ -304,7 +304,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def RollRM(self):
         try:
-            self.ser.write('h'.encode('utf-8'))
+            self.ser.write('g'.encode('utf-8'))
             print("RollRM")
         except Exception as e:
             print (e)
@@ -314,7 +314,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def RollLP(self):
         try:
-            self.ser.write('o'.encode('utf-8'))
+            self.ser.write('p'.encode('utf-8'))
             print("RollLP")
         except Exception as e:
             print (e)
@@ -322,7 +322,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def RollLM(self):
         try:
-            self.ser.write('p'.encode('utf-8'))
+            self.ser.write('o'.encode('utf-8'))
             print("RollLM")
         except Exception as e:
             print (e)
@@ -335,7 +335,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def NeckP(self):
         try:
-            self.ser.write('a'.encode('utf-8'))
+            self.ser.write('s'.encode('utf-8'))
             print("NeckP")
         except Exception as e:
             print (e)
@@ -343,7 +343,7 @@ class MyWin(QtWidgets.QMainWindow):
 
     def NeckM(self):
         try:
-            self.ser.write('s'.encode('utf-8'))
+            self.ser.write('a'.encode('utf-8'))
             print("NeckM")
         except Exception as e:
             print (e)
